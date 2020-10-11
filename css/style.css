@@ -10,11 +10,11 @@ body {
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 .header{
@@ -23,6 +23,7 @@ body {
 
 .wrapper-header{
   position: relative;
+  overflow: hidden;
 }
 /* #video-bg {
   position: fixed;
@@ -42,10 +43,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-
 }
 
-#video-bg > .video {
+#video-bg > .video-outer {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -54,18 +54,27 @@ width: 100%;
 height: 100%;
 }
 
+#video-bg video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.portfolio__img{
+  max-width: 90%;
+}
+
 /* @media (min-aspect-ratio: 16/9){
-  #video-bg {
-    width: 100%;
-    height: auto;
-  }
+#video-bg {
+width: 100%;
+height: auto;
+}
 }
 
 @media (max-aspect-ratio: 16/9){
-  #video-bg > video {
-    width: auto;
-    height: 100%;
-  }
+#video-bg > video {
+width: auto;
+height: 100%;
+}
 } */
 /* @supports (object-fit: cover) {
    #video-bg > video {
@@ -82,7 +91,6 @@ height: 100%;
 
 .wrapper {
   display: block;
-  justify-content: center;
   align-items: center;
   background: url(../video/video-bg.jpg);
   background-size: cover;
